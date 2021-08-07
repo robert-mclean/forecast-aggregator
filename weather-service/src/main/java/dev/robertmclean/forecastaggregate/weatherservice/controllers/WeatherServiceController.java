@@ -2,9 +2,9 @@ package dev.robertmclean.forecastaggregate.weatherservice.controllers;
 
 import dev.robertmclean.forecastaggregate.weatherservice.dtos.UserDto;
 import dev.robertmclean.forecastaggregate.weatherservice.entities.User;
+import dev.robertmclean.forecastaggregate.weatherservice.services.WeatherRetriever;
 import dev.robertmclean.forecastaggregate.weatherservice.services.WeatherUserLoader;
 import dev.robertmclean.forecastaggregate.weatherservice.services.WeatherUserSaver;
-import dev.robertmclean.forecastaggregate.weatherservice.services.WeatherRetriever;
 import dev.robertmclean.forecastaggregate.weatherservice.transformers.UserTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

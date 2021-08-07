@@ -23,9 +23,6 @@ public class ForecastController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<List<WeatherUserDto>> requestEntity = new HttpEntity<List<WeatherUserDto>>(userDtos, headers);
 
-        System.out.println("Request in gateway");
-        System.out.println(requestEntity);
-
         return restTemplate.exchange(
                 "http://weather-service/users",
                 HttpMethod.POST,
@@ -41,6 +38,16 @@ public class ForecastController {
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<WeatherUserDto>() {}
+        );
+    }
+
+    @GetMapping("/weatherForecast/{userId}")
+    public ResponseEntity<String> retrieveForecast(@PathVariable Long userId) {
+        return restTemplate.exchange(
+                "http://weather-service/forecast/"+userId,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<String>() {}
         );
     }
 }
